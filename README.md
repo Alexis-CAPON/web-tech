@@ -1,5 +1,5 @@
-# lab2
+# Web-Tech 2021
 
-# Ceci est une modification !!
-# Encore une autre !
-# Coucou Alexis bark !
+# Courses and lab
+
+#         - Alexis CAPON
