@@ -1,3 +1,3 @@
 # Web-Tech 2021
 Courses and labs
-        - Alexis CAPON
+        - Alexis CAPON and Cyril Perez
