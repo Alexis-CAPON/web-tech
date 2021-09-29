@@ -1,3 +1,12 @@
 # Web-Tech 2021
-Courses and labs
-        - Alexis CAPON and Cyril Perez
+Cours et TPs
+
+### Organisé comme suit :
+
+    - web-tech/labs
+    - web-tech/projects
+
+
+        > Alexis CAPON and Cyril Perez
+
+        
