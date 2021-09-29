@@ -1,5 +1,5 @@
 # Web-Tech 2021
-Cours et TPs
+Cours et TPs par **Alexis CAPON et Cyril Perez**
 
 ### Organisé comme suit :
 
@@ -7,6 +7,12 @@ Cours et TPs
     - web-tech/projects
 
 
-        > Alexis CAPON and Cyril Perez
+## Lab2 : webtech-back-end
 
-        
+**Objectifs :**
+
+**Utilisation :**
+
+**Status :**
+
+**API :**
