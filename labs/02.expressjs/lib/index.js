@@ -43,3 +43,14 @@ app.get('/channel/:id', (req, res) => {
 // app.listen(config.port, () => {
 //   console.log(`Chat is waiting for you at http://localhost:${config.port}`)
 // })
+
+app.set('views', __dirname + "/views")
+app.set('view engine', 'ejs');
+
+app.get(
+  '/hello/:name',
+  (req, res) => res.render('hello.ejs', {name: req.params.name})
+)
+
+const path = require('path')
+app.use(express.static(path.join(__dirname, 'public')))
