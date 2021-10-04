@@ -5,14 +5,3 @@ Cours et TPs par **Alexis CAPON et Cyril Perez**
 
     - web-tech/labs
     - web-tech/projects
-
-
-## Lab2 : webtech-back-end
-
-**Objectifs :**
-
-**Utilisation :**
-
-**Status :**
-
-**API :**

@@ -15,6 +15,7 @@ const data = {
     name: 'Channel 3',
   }]
 }
+app.set('port', config.port)
 
 app.get('/', (req, res) => {
   // Project homepage
@@ -22,6 +23,7 @@ app.get('/', (req, res) => {
   // * The page title
   // * A link to the `/channels` page
   // Don't bother with the `head` tag
+  res.render('hello.ejs')
 })
 
 app.get('/channels', (req, res) => {
@@ -33,6 +35,8 @@ app.get('/channels', (req, res) => {
   // * Channels are identified by channel ids.
   // * Make sure to find the appropriate HTML tag to respect the HTML semantic
   //   of a list
+
+
 })
 
 app.get('/channel/:id', (req, res) => {
@@ -40,17 +44,30 @@ app.get('/channel/:id', (req, res) => {
   // Print the channel title
 })
 
+
 // app.listen(config.port, () => {
 //   console.log(`Chat is waiting for you at http://localhost:${config.port}`)
 // })
 
-app.set('views', __dirname + "/views")
+app.set('views', "./views")
 app.set('view engine', 'ejs');
+
+app.listen(
+  app.get('port'),
+  () => console.log(`port ${app.get('port')}`)
+)
 
 app.get(
   '/hello/:name',
   (req, res) => res.render('hello.ejs', {name: req.params.name})
 )
+
+app.get('/metrics.json', async (req, res) => {
+  const data = await metrics.list()
+  res.status(200).json(data)
+})
+
+
 
 const path = require('path')
 app.use(express.static(path.join(__dirname, 'public')))
