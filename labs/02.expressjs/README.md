@@ -26,7 +26,7 @@ Lancer la commande :
 npm start
 ```
 
-Se rendre à https://localhost:1337
+Se rendre à http://localhost:1337
 
 
 ## Auteurs
