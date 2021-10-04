@@ -7,7 +7,9 @@ Lab 2 : ExpressJS
 ## Fonctionnalités
 
 - `/`   -   Page principale
-- `/hello` - Page Hello
+- `/hello/<yourname>` - Page principale customisée
+- `/channels` - Liste des Channels
+- `/channels/<id>` - Accède à un channel précis grâce à son identifiant
 
 
 ## Installation
@@ -26,7 +28,7 @@ Lancer la commande :
 npm start
 ```
 
-Se rendre à http://localhost:1337
+Se rendre à l'adresse http://localhost:1337
 
 
 ## Auteurs
