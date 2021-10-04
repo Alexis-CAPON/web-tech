@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
   // * The page title
   // * A link to the `/channels` page
   // Don't bother with the `head` tag
-  res.render('hello.ejs')
+  res.render('hello.ejs', {name: 'Unknown'})
 })
 
 app.get('/channels', (req, res) => {
@@ -36,12 +36,13 @@ app.get('/channels', (req, res) => {
   // * Make sure to find the appropriate HTML tag to respect the HTML semantic
   //   of a list
 
-
+  res.render('channels')
 })
 
-app.get('/channel/:id', (req, res) => {
+app.get('/channel_body/:id', (req, res) => {
   // Channel information
   // Print the channel title
+  res.render('channel_body', {id: req.params.id})
 })
 
 

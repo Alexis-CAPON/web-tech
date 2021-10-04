@@ -1,9 +1,36 @@
-## Lab2 : webtech-back-end
 
-**Objectifs :**
+# Lab2 : webtech-back-end
 
-**Utilisation :**
+Lab 2 : ExpressJS
 
-**Status :**
 
-**API :**
+## Fonctionnalités
+
+- `/`   -   Page principale
+- `/hello` - Page Hello
+
+
+## Installation
+
+Lancer la commande :
+
+```bash
+npm install
+```
+
+## Utilisation
+
+Lancer la commande :
+
+```bash
+npm start
+```
+
+Se rendre à https://localhost:1337
+
+
+## Auteurs
+
+CAPON Alexis
+
+PEREZ Cyril
