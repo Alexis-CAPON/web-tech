@@ -1,7 +1,7 @@
 
-# Lab3 : webtech-back-end
+# Lab2 : webtech-back-end
 
-Lab 3 : Storage
+Lab 2 : ExpressJS
 
 
 ## Fonctionnalités
@@ -10,7 +10,6 @@ Lab 3 : Storage
 - `/hello/<yourname>` - Page principale customisée
 - `/channels` - Liste des Channels
 - `/channels/<id>` - Accède à un channel précis grâce à son identifiant
-- Stockage des bases de données
 
 
 ## Installation
