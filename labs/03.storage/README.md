@@ -1,7 +1,6 @@
 
-# Lab2 : webtech-back-end
+# Lab3 : Storage
 
-Lab 2 : ExpressJS
 
 
 ## Fonctionnalités
