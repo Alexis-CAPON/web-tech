@@ -17,6 +17,10 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import SettingsIcon from '@mui/icons-material/Settings';
+import MessageIcon from '@mui/icons-material/Message';
+import ForumIcon from '@mui/icons-material/Forum';
 
 const drawerWidth = 240;
 
@@ -115,7 +119,7 @@ export default function Layout({children}) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Mini variant drawer
+            Online messagery
           </Typography>
         </Toolbar>
       </AppBar>
@@ -127,10 +131,10 @@ export default function Layout({children}) {
         </DrawerHeader>
         <Divider />
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+          {['Create a channel', 'My Channels', 'Invite Friends'].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                {index % 2 === 0 ? <MessageIcon /> : <ForumIcon />}
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
@@ -138,10 +142,10 @@ export default function Layout({children}) {
         </List>
         <Divider />
         <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
+          {['Profil', 'Settings'].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                {index % 2 === 0 ? <AccountCircleIcon /> : <SettingsIcon />}
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
