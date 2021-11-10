@@ -1,7 +1,6 @@
 
 /** @jsxImportSource @emotion/react */
-import {useState} from 'react';
-import Layout from './component/Layout';
+import {useState} from 'react'
 import './App.css';
 // Local
 import Footer from './Footer'
@@ -14,21 +13,24 @@ const styles = {
     boxSizing: 'border-box',
     display: 'flex',
     flexDirection: 'column',
-    backgroundColor: '',
+    backgroundColor: '#565E71',
     padding: '50px',
   },
 }
 
 export default function App() {
   const [user, setUser] = useState(null)
+  const [drawerMobileVisible, setDrawerMobileVisible] = useState(false)
+  const drawerToggleListener = () => {
+    setDrawerMobileVisible(!drawerMobileVisible)
+  }
   return (
     <div className="App" css={styles.root}>
-      <Header />
-
+      <Header drawerToggleListener={drawerToggleListener}/>
       {
-        user ? <Layout><Main /> </Layout>: <Login onUser={setUser} />
+        user ? <Main drawerMobileVisible={drawerMobileVisible} /> : <Login onUser={setUser} />
       }
-
+      <Footer />
     </div>
   );
 }

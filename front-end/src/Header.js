@@ -18,7 +18,7 @@ const styles = {
 export default function Header() {
   return (
     <header css={styles.header}>
-      Header
+      
     </header>
   );
 }
