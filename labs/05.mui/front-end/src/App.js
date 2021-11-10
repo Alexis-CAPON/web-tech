@@ -1,6 +1,7 @@
 
 /** @jsxImportSource @emotion/react */
 import {useState} from 'react';
+import Layout from './component/Layout';
 import './App.css';
 // Local
 import Footer from './Footer'
@@ -13,7 +14,7 @@ const styles = {
     boxSizing: 'border-box',
     display: 'flex',
     flexDirection: 'column',
-    backgroundColor: '#565E71',
+    backgroundColor: '',
     padding: '50px',
   },
 }
@@ -22,11 +23,12 @@ export default function App() {
   const [user, setUser] = useState(null)
   return (
     <div className="App" css={styles.root}>
-      <Header />
+      //<Header />
+
       {
-        user ? <Main /> : <Login onUser={setUser} />
+        user ? <Layout><Main /> </Layout>: <Login onUser={setUser} />  
       }
-      <Footer />
+
     </div>
   );
 }
