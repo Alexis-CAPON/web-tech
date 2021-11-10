@@ -63,6 +63,8 @@ db/
 # macos
 .DS_Store
 
+#lock file
+.lock
 
 
 # parcel-bundler cache (https://parceljs.org/)
