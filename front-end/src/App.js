@@ -19,16 +19,33 @@ const styles = {
   },
 }
 
+let { data } = require('./Context.js');
+
 export default function App() {
-  const [user, setUser] = useState(null)
-  return (
-    <div className="App" css={styles.root}>
-      <Header />
+  const [user, setUser] = useState(null);
 
-      {
-        user ? <Layout><Main /> </Layout>: <Login onUser={setUser} />
-      }
+  data.liveUserInfo.isConnected = false;
+  if (data.liveUserInfo.isConnected){
+    return (
+      <div className="App" css={styles.root}>
+        <Header />
+        {
+            <Layout><Main /> </Layout>
+        }
 
-    </div>
-  );
+      </div>
+    );
+
+  }
+  else{
+
+    return (
+      <div className="App" css={styles.root}>
+        <Header />
+        {
+            <Login onUser={setUser} />
+        }
+      </div>
+    );
+  }
 }
