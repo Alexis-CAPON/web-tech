@@ -1,0 +1,564 @@
+.mediaViewInfo {
+	--web-view-name: Home;
+	--web-view-id: Home;
+	--web-enable-scale-up: true;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+:root {
+	--web-view-ids: Home;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+#Home {
+	position: absolute;
+	width: 1920px;
+	height: 1080px;
+	background-color: rgba(255,255,255,1);
+	overflow: hidden;
+	--web-view-name: Home;
+	--web-view-id: Home;
+	--web-enable-scale-up: true;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+#Groupe_3 {
+	position: absolute;
+	width: 1619.728px;
+	height: 39.178px;
+	left: 144px;
+	top: 40.411px;
+	overflow: visible;
+}
+#Composant_1__1 {
+	position: absolute;
+	width: 210.974px;
+	height: 39.178px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#ChatOnline {
+	left: 43.974px;
+	top: 1.589px;
+	position: absolute;
+	overflow: visible;
+	width: 168px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Tahoma;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 30px;
+	color: rgba(0,0,0,1);
+}
+#Icon_awesome-location-arrow {
+	fill: rgba(0,0,0,1);
+}
+.Icon_awesome-location-arrow {
+	overflow: visible;
+	position: absolute;
+	width: 27.702px;
+	height: 27.703px;
+	transform: translate(0px, 0px) matrix(1,0,0,1,5.7375,5.7373) rotate(45deg);
+	transform-origin: center;
+	left: 0px;
+	top: 0px;
+}
+#Groupe_1 {
+	opacity: 0.7;
+	position: absolute;
+	width: 590px;
+	height: 28px;
+	left: 1029.728px;
+	top: 9.589px;
+	overflow: visible;
+}
+#home {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 69px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 23px;
+	color: rgba(0,0,0,1);
+}
+#dashboard {
+	left: 152px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 125px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 23px;
+	color: rgba(0,0,0,1);
+}
+#github {
+	left: 360px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 79px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 23px;
+	color: rgba(0,0,0,1);
+}
+#about {
+	left: 522px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 69px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 23px;
+	color: rgba(0,0,0,1);
+}
+#Rectangle_1 {
+	opacity: 0.31;
+	fill: rgba(127,255,0,1);
+}
+.Rectangle_1 {
+	position: absolute;
+	overflow: visible;
+	width: 1920px;
+	height: 958px;
+	left: 0px;
+	top: 122px;
+}
+#Ellipse_1 {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Ellipse_1 {
+	position: absolute;
+	overflow: visible;
+	width: 749px;
+	height: 749px;
+	left: 1002px;
+	top: 236px;
+}
+#Man {
+	position: absolute;
+	width: 409.001px;
+	height: 354.758px;
+	left: 1268px;
+	top: 460.621px;
+	overflow: visible;
+}
+#Group_759 {
+	position: absolute;
+	width: 354.758px;
+	height: 354.758px;
+	left: 54.243px;
+	top: 0px;
+	overflow: visible;
+}
+#Group_776 {
+	position: absolute;
+	width: 354.758px;
+	height: 354.758px;
+	left: 54.243px;
+	top: 0px;
+	overflow: visible;
+}
+#Group_2564 {
+	position: absolute;
+	width: 206.927px;
+	height: 135.984px;
+	left: 0px;
+	top: 177.141px;
+	overflow: visible;
+}
+#Path_482 {
+	fill: rgba(208,215,219,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_482 {
+	overflow: visible;
+	position: absolute;
+	width: 52.692px;
+	height: 25.353px;
+	left: 108.28px;
+	top: 104.143px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_483 {
+	fill: rgba(237,207,187,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_483 {
+	overflow: visible;
+	position: absolute;
+	width: 73.939px;
+	height: 23.882px;
+	left: 42.116px;
+	top: 108.154px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_484 {
+	fill: rgba(209,182,165,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_484 {
+	overflow: visible;
+	position: absolute;
+	width: 44.851px;
+	height: 18.67px;
+	left: 4.331px;
+	top: 107.246px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_485 {
+	fill: rgba(237,207,187,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_485 {
+	overflow: visible;
+	position: absolute;
+	width: 57.542px;
+	height: 20.163px;
+	left: 0px;
+	top: 111.875px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_486 {
+	fill: rgba(237,207,187,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_486 {
+	overflow: visible;
+	position: absolute;
+	width: 36.542px;
+	height: 24.263px;
+	left: 21.533px;
+	top: 103.907px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_487 {
+	fill: rgba(232,232,232,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_487 {
+	overflow: visible;
+	position: absolute;
+	width: 20.872px;
+	height: 38.213px;
+	left: 100.524px;
+	top: 98.775px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_488 {
+	fill: rgba(208,215,219,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_488 {
+	overflow: visible;
+	position: absolute;
+	width: 70.675px;
+	height: 127.737px;
+	left: 137.321px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Man_ {
+	position: absolute;
+	width: 355.014px;
+	height: 303.389px;
+	left: 1061.864px;
+	top: 410.211px;
+	overflow: visible;
+}
+#Group_812 {
+	position: absolute;
+	width: 303.389px;
+	height: 303.389px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#Group_828 {
+	position: absolute;
+	width: 303.389px;
+	height: 303.389px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#Group_833 {
+	position: absolute;
+	width: 303.389px;
+	height: 303.389px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#Group_2560 {
+	position: absolute;
+	width: 183.263px;
+	height: 74.462px;
+	left: 171.752px;
+	top: 163.253px;
+	overflow: visible;
+}
+#Path_557 {
+	fill: rgba(208,215,219,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_557 {
+	overflow: visible;
+	position: absolute;
+	width: 40.558px;
+	height: 28.893px;
+	left: 66.817px;
+	top: 46.341px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_558 {
+	fill: rgba(204,170,155,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_558 {
+	overflow: visible;
+	position: absolute;
+	width: 56.023px;
+	height: 34.564px;
+	left: 99.515px;
+	top: 24.568px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_559 {
+	fill: rgba(179,149,136,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_559 {
+	overflow: visible;
+	position: absolute;
+	width: 32.284px;
+	height: 26.107px;
+	left: 147.105px;
+	top: 6.483px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_560 {
+	fill: rgba(204,170,155,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_560 {
+	overflow: visible;
+	position: absolute;
+	width: 40.782px;
+	height: 31.901px;
+	left: 143.499px;
+	top: 8.157px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_561 {
+	fill: rgba(204,170,155,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_561 {
+	overflow: visible;
+	position: absolute;
+	width: 24.146px;
+	height: 26.867px;
+	left: 141.703px;
+	top: 10.611px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_562 {
+	fill: rgba(232,232,232,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_562 {
+	overflow: visible;
+	position: absolute;
+	width: 23.714px;
+	height: 30.954px;
+	left: 92.352px;
+	top: 37.157px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_563 {
+	fill: rgba(208,215,219,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_563 {
+	overflow: visible;
+	position: absolute;
+	width: 85.803px;
+	height: 75.466px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#The_first_online_chat_ {
+	left: 190px;
+	top: 333px;
+	position: absolute;
+	overflow: visible;
+	width: 698px;
+	height: 268px;
+	text-align: left;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 110px;
+	color: rgba(0,0,0,1);
+}
+#Chat_with_your_friends_from_wh {
+	left: 202px;
+	top: 628px;
+	position: absolute;
+	overflow: visible;
+	width: 801px;
+	height: 122px;
+	text-align: left;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 50px;
+	color: rgba(0,0,0,1);
+}
+#Grille_de_rptition_2 {
+	position: absolute;
+	width: 283px;
+	height: 70px;
+	left: 202px;
+	top: 815px;
+	overflow: hidden;
+}
+#Group {
+	position: absolute;
+	width: 283px;
+	height: 70px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#Rectangle_2 {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: round;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_2 {
+	position: absolute;
+	overflow: visible;
+	width: 283px;
+	height: 70px;
+	left: 0px;
+	top: 0px;
+}
+#Start_now {
+	left: 67px;
+	top: 14px;
+	position: absolute;
+	overflow: visible;
+	width: 150px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Tahoma;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 35px;
+	color: rgba(0,0,0,1);
+}

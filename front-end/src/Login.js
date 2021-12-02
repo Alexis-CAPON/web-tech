@@ -20,10 +20,19 @@ import axios from 'axios'
 // Layout
 import { useTheme } from '@mui/styles';
 
+import Layout from './component/Layout';
+import Header from './Header';
+import Main from './Main';
+import Homepage from './Homepage.js';
+
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-/*
+import { style } from '@mui/system';
+let { data } = require('./Context.js');
+
+
+
 const base64URLEncode = (str) => {
   return str.toString('base64')
     .replace(/\+/g, '-')
@@ -37,7 +46,7 @@ const sha256 = (buffer) => {
     .update(buffer)
     .digest()
 }
-*/
+
 const useStyles = (theme) => ({
   root: {
     flex: '1 1 auto',
@@ -59,7 +68,7 @@ const useStyles = (theme) => ({
     },
   },
 })
-/*
+
 const Redirect = ({
   config,
   codeVerifier,
@@ -79,12 +88,23 @@ const Redirect = ({
     ].join('')
     window.location = url
   }
+  
   return (
-    <div css={styles.root}>
-      <Link onClick={redirect} color="secondary">Login with OpenID Connect and OAuth2</Link>
+    
+     <div css={styles.root}>
+       <Link onClick={redirect} color="secondary">Login with OpenID Connect and OAuth2</Link>
     </div>
+    
+    //<Homepage />
+
+    //  window.location.href = "http://127.0.0.1:5556/dex/auth?client_id=webtech-frontend&scope=openid%20email%20offline_access&response_type=code&redirect_uri=http://127.0.0.1:3000&code_challenge=nABR8_uxRwXhRg0-Yp0wz7BhxqA45NWRrgAbnINF7l0&code_challenge_method=S256"
+   //redirect
   )
+
+
 }
+
+
 
 const Tokens = ({
   oauth
@@ -99,9 +119,18 @@ const Tokens = ({
     removeCookie('oauth')
   }
   return (
+    /*
     <div css={styles.root}>
       Welcome {email} <Link onClick={logout} color="secondary">logout</Link>
     </div>
+    */
+    <div>
+        <Header />
+        {
+            <Layout><Main /> </Layout>
+        }
+
+      </div>
   )
 }
 
@@ -138,12 +167,12 @@ const LoadToken = function({
     <div css={styles.root}>Loading tokens</div>
   )
 }
-*/
+
 export default function Login({
   onUser
 }) {
   const styles = useStyles(useTheme())
-  /*
+  
   const [cookies, setCookie, removeCookie] = useCookies([]);
   const config = {
     authorization_endpoint: 'http://127.0.0.1:5556/dex/auth',
@@ -177,7 +206,8 @@ export default function Login({
         removeCookie={removeCookie} />
     )
   }
-  */
+  
+ /*
   return (
 
     <Container component="main" maxWidth="xs">
@@ -250,4 +280,5 @@ export default function Login({
      </Container>
 
   );
+  */
 }

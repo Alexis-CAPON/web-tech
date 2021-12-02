@@ -23,8 +23,9 @@ let { data } = require('./Context.js');
 
 export default function App() {
   const [user, setUser] = useState(null);
-
+  console.log(data.liveUserInfo.isConnected);
   data.liveUserInfo.isConnected = false;
+  console.log(data.liveUserInfo.isConnected);
   if (data.liveUserInfo.isConnected){
     return (
       <div className="App" css={styles.root}>
