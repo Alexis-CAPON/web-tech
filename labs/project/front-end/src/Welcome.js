@@ -3,26 +3,25 @@
 // Layout
 import { useTheme } from '@mui/styles';
 import { Grid, Typography } from '@mui/material';
-import {ReactComponent as ChannelIcon} from './icons/channel.svg';
-import {ReactComponent as FriendsIcon} from './icons/friends.svg';
-import {ReactComponent as SettingsIcon} from './icons/settings.svg';
-
+import { ReactComponent as ChannelIcon } from './icons/channel.svg';
+import { ReactComponent as FriendsIcon } from './icons/friends.svg';
+import { ReactComponent as SettingsIcon } from './icons/settings.svg';
 
 const useStyles = (theme) => ({
   root: {
     height: '100%',
     flex: '1 1 auto',
     display: 'flex',
+    // background: 'rgba(0,0,0,.2)',
   },
   card: {
     textAlign: 'center',
   },
   icon: {
     width: '30%',
-    fill: '',
+    fill: '#fff',
   }
 })
-
 
 export default function Welcome() {
   const styles = useStyles(useTheme())
@@ -36,7 +35,7 @@ export default function Welcome() {
         spacing={5}
       >
         <Grid item xs>
-          <div css={styles.card} onClick={console.log("test")}>
+          <div css={styles.card}>
             <ChannelIcon css={styles.icon} />
             <Typography color="textPrimary">
               Create channels
@@ -45,7 +44,7 @@ export default function Welcome() {
         </Grid>
         <Grid item xs>
           <div css={styles.card}>
-            <FriendsIcon css={styles.icon}/>
+            <FriendsIcon css={styles.icon} />
             <Typography color="textPrimary">
               Invite friends
             </Typography>

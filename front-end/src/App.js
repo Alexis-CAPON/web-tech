@@ -1,7 +1,7 @@
 
 /** @jsxImportSource @emotion/react */
 import {useState} from 'react';
-import Layout from './component/Layout';
+import Layout from './Layout';
 import './App.css';
 // Local
 import Footer from './Footer'

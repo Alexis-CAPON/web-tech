@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { CookiesProvider } from 'react-cookie';
 import './index.css';
 import App from './App';
+import { BrowserRouter } from "react-router-dom";
 
 import 'typeface-roboto'
 // Layout
@@ -16,8 +17,10 @@ const theme = createTheme({
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <App />
-    </ThemeProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>,
+    </ThemeProvider>,
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -11,7 +11,7 @@ const styles = {
   },
   channel: {
     padding: '.2rem .5rem',
-    whiteSpace: 'nowrap', 
+    whiteSpace: 'nowrap',
   }
 }
 

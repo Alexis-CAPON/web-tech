@@ -20,7 +20,7 @@ import axios from 'axios'
 // Layout
 import { useTheme } from '@mui/styles';
 
-import Layout from './component/Layout';
+import Layout from './Layout';
 import Header from './Header';
 import Main from './Main';
 import Homepage from './Homepage.js';
@@ -88,13 +88,13 @@ const Redirect = ({
     ].join('')
     window.location = url
   }
-  
+
   return (
-    
+
      <div css={styles.root}>
        <Link onClick={redirect} color="secondary">Login with OpenID Connect and OAuth2</Link>
     </div>
-    
+
     //<Homepage />
 
     //  window.location.href = "http://127.0.0.1:5556/dex/auth?client_id=webtech-frontend&scope=openid%20email%20offline_access&response_type=code&redirect_uri=http://127.0.0.1:3000&code_challenge=nABR8_uxRwXhRg0-Yp0wz7BhxqA45NWRrgAbnINF7l0&code_challenge_method=S256"
@@ -172,7 +172,7 @@ export default function Login({
   onUser
 }) {
   const styles = useStyles(useTheme())
-  
+
   const [cookies, setCookie, removeCookie] = useCookies([]);
   const config = {
     authorization_endpoint: 'http://127.0.0.1:5556/dex/auth',
@@ -206,7 +206,7 @@ export default function Login({
         removeCookie={removeCookie} />
     )
   }
-  
+
  /*
   return (
 
