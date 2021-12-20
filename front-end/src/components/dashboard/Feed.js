@@ -43,8 +43,17 @@ export default function ClippedDrawer() {
   const [checked, setChecked] = useState(true);
   const {oauth} = useContext(Context)
 
+  window.addEventListener("DOMContentLoaded", event => {
+    const audio = document.querySelector("audio");
+    audio.volume = 0.5;
+    audio.play();
+ });
+
   const handleChange = (event) => {
     setChecked(event.target.checked);
+    if (checked==false) {
+      window.location.reload()
+    }
   };
 
   const [openPopup, setOpenPopup] = useState(false);
@@ -111,11 +120,11 @@ export default function ClippedDrawer() {
               <FormControlLabel control={<Switch checked={checked} onChange={handleChange}/>} label="Activate Christmas Music" />
             </FormGroup>
             <div>
-            {checked === false && <div>
+            {checked ? (<div>
               <audio>
                   <source src = {Music} type="audio/mp3"></source>
               </audio>
-            </div>}
+            </div>):(<div></div>)}
             </div>
           </div>
 
