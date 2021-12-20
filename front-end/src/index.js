@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { CookiesProvider } from 'react-cookie';
+import { BrowserRouter } from "react-router-dom";
 import './index.css';
 import App from './App';
-import { BrowserRouter } from "react-router-dom";
-
+import { ContextProvider } from './Context';
 import 'typeface-roboto'
-// Layout
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const theme = createTheme({
@@ -14,13 +13,18 @@ const theme = createTheme({
   }
 });
 
+
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>,
-    </ThemeProvider>,
+    <ContextProvider>
+      <CookiesProvider>
+      <ThemeProvider theme={theme}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+        </ThemeProvider>
+      </CookiesProvider>
+    </ContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

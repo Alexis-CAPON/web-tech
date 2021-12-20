@@ -78,6 +78,17 @@ module.exports = {
         })
       })
     },
+    delete: async (channelId, creation) => {
+      await db.del(`messages:${channelId}:${creation}`, JSON.stringify({
+      }))
+    },
+    update: async (channelId, creation, message) => {
+      await db.put(`messages:${channelId}:${creation}`, JSON.stringify({
+        author: message.author,
+        content: message.content
+      }))
+      return merge(message, {channelId: channelId, creation: creation})
+    },
   },
   users: {
     create: async (user) => {

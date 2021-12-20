@@ -1,36 +1,25 @@
-import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import CssBaseline from '@mui/material/CssBaseline';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-import { useEffect } from 'react';
+/** @jsxImportSource @emotion/react */
+import { useContext, useEffect } from 'react';
 import { useCookies } from 'react-cookie';
 import crypto from 'crypto'
 import qs from 'qs'
 import axios from 'axios'
-
-/** @jsxImportSource @emotion/react */
 // Layout
 import { useTheme } from '@mui/styles';
+import { Link } from '@mui/material';
+// Local
+import Context from './Context'
+import {useNavigate} from 'react-router-dom'
 
-import Layout from './Layout';
-import Header from './Header';
-import Main from './Main';
-import Homepage from './Homepage.js';
-
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import * as React from 'react';
 import Button from '@mui/material/Button';
-import { style } from '@mui/system';
-let { data } = require('./Context.js');
-
+import Divider from '@mui/material/Divider';
 
 
 const base64URLEncode = (str) => {
@@ -69,6 +58,7 @@ const useStyles = (theme) => ({
   },
 })
 
+
 const Redirect = ({
   config,
   codeVerifier,
@@ -89,48 +79,58 @@ const Redirect = ({
     window.location = url
   }
 
+  const [open, setOpen] = React.useState(true);
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
   return (
+    <div css={styles.root}>
+      <Dialog open={open} onClose={handleClose}>
+            <DialogTitle>Login - Welcome !</DialogTitle>
+            <DialogContent>
+              <DialogContentText sx = {{marginBottom: 0, color: "#868686"}}>
+                  Welcome ! Please choose a login method :
+              </DialogContentText>
+              <Divider />
 
-     <div css={styles.root}>
-       <Link onClick={redirect} color="secondary">Login with OpenID Connect and OAuth2</Link>
+              <Button  sx = {{marginTop: 2}} variant="outlined" onClick = {redirect}>
+                Oauth - Secured authentification
+              </Button>
+            </DialogContent>
+            <DialogActions>
+            </DialogActions>
+        </Dialog>
     </div>
-
-    //<Homepage />
-
-    //  window.location.href = "http://127.0.0.1:5556/dex/auth?client_id=webtech-frontend&scope=openid%20email%20offline_access&response_type=code&redirect_uri=http://127.0.0.1:3000&code_challenge=nABR8_uxRwXhRg0-Yp0wz7BhxqA45NWRrgAbnINF7l0&code_challenge_method=S256"
-   //redirect
   )
-
-
 }
 
 
 
-const Tokens = ({
-  oauth
-}) => {
-  const [,, removeCookie] = useCookies([]);
+export function Tokens ({oauth})  {
   const styles = useStyles(useTheme())
+  const {setOauth} = useContext(Context)
   const {id_token} = oauth
   const id_payload = id_token.split('.')[1]
   const {email} = JSON.parse(atob(id_payload))
+  const {name} = JSON.parse(atob(id_payload))
+  const [cookies, setCookie, removeCookies] = useCookies();
+  
+  const navigate = useNavigate();
   const logout = (e) => {
+    navigate("..");
+    navigate("/homepage");
     e.stopPropagation()
-    removeCookie('oauth')
+    setOauth(null);
+    removeCookies(oauth);
+    
   }
   return (
-    /*
     <div css={styles.root}>
-      Welcome {email} <Link onClick={logout} color="secondary">logout</Link>
+      <h2>Are you sure you want to do this {oauth.email.split('@')[0].split('.')[0].toUpperCase()[0] + oauth.email.split('@')[0].split('.')[0].substring(1)} ?</h2>
+      <Link onClick={logout} color="secondary">Yes, I am. (logout)</Link>
     </div>
-    */
-    <div>
-        <Header />
-        {
-            <Layout><Main /> </Layout>
-        }
-
-      </div>
   )
 }
 
@@ -139,13 +139,13 @@ const LoadToken = function({
   codeVerifier,
   config,
   removeCookie,
-  setCookie
+  setOauth
 }) {
-  const styles = useStyles(useTheme())
+  const styles = useStyles(useTheme());
   useEffect( () => {
     const fetch = async () => {
       try {
-        const {data: oauth} = await axios.post(
+        const {data} = await axios.post(
           config.token_endpoint
         , qs.stringify ({
           grant_type: 'authorization_code',
@@ -155,7 +155,7 @@ const LoadToken = function({
           code: `${code}`,
         }))
         removeCookie('code_verifier')
-        setCookie('oauth', oauth)
+        setOauth(data)
         window.location = '/'
       }catch (err) {
         console.error(err)
@@ -172,113 +172,45 @@ export default function Login({
   onUser
 }) {
   const styles = useStyles(useTheme())
-
   const [cookies, setCookie, removeCookie] = useCookies([]);
+  const {oauth, setOauth} = useContext(Context)
   const config = {
-    authorization_endpoint: 'http://127.0.0.1:5556/dex/auth',
-    token_endpoint: 'http://127.0.0.1:5556/dex/token',
+    authorization_endpoint: 'http://localhost:5556/dex/auth',
+    token_endpoint: 'http://localhost:5556/dex/token',
     client_id: 'webtech-frontend',
-    redirect_uri: 'http://127.0.0.1:3000',
+    redirect_uri: 'http://localhost:3000/dashboard',
     scope: 'openid%20email%20offline_access',
   }
   const params = new URLSearchParams(window.location.search)
   const code = params.get('code')
-  // Is there a code query parameters in the url
-  if(!code){ // No: we are no being redirected from an oauth server
-    if(!cookies.oauth){
+  // Is there a code query parameters in the url 
+  if(!code){ // No: we are not being redirected from an oauth server
+    console.log("Debug - Not redirected")
+    if(!oauth){
+      console.log("Debug - No oauth")
       const codeVerifier = base64URLEncode(crypto.randomBytes(32))
       setCookie('code_verifier', codeVerifier)
       return (
         <Redirect codeVerifier={codeVerifier} config={config} css={styles.root} />
       )
     }else{ // Yes: user is already logged in, great, is is working
+      console.log("Debug - Already logged")
+      /*
       return (
-        <Tokens oauth={cookies.oauth} css={styles.root} />
+        <Tokens oauth={oauth} css={styles.root} />
       )
+      */
+     return (<div></div>)
     }
   }else{ // Yes, we are coming from an oauth server
+    console.log("Debug - Redirected")
     return (
       <LoadToken
         code={code}
         codeVerifier={cookies.code_verifier}
         config={config}
-        setCookie={setCookie}
+        setOauth={setOauth}
         removeCookie={removeCookie} />
     )
   }
-
- /*
-  return (
-
-    <Container component="main" maxWidth="xs">
-       <CssBaseline />
-       <Box
-         sx={{
-           marginTop: 8,
-           display: 'flex',
-           flexDirection: 'column',
-           alignItems: 'center',
-         }}
-       >
-         <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-           <LockOutlinedIcon />
-         </Avatar>
-         <Typography component="h1" variant="h5">
-           Sign in
-         </Typography>
-         <Box component="form"  noValidate sx={{ mt: 1 }}>
-           <TextField
-             margin="normal"
-             required
-             fullWidth
-             id="email"
-             label="Email Address"
-             name="email"
-             autoComplete="email"
-             autoFocus
-           />
-           <TextField
-             margin="normal"
-             required
-             fullWidth
-             name="password"
-             label="Password"
-             type="password"
-             id="password"
-             autoComplete="current-password"
-           />
-           <FormControlLabel
-             control={<Checkbox value="remember" color="primary" />}
-             label="Remember me"
-           />
-           <Button
-             type="submit"
-             fullWidth
-             variant="contained"
-             sx={{ mt: 3, mb: 2 }}
-             onClick={ (e) => {
-               e.stopPropagation()
-               onUser({username: 'david'})
-             }}
-           >
-             Sign In
-           </Button>
-           <Grid container>
-             <Grid item xs>
-               <Link href="#" variant="body2">
-                 Forgot password?
-               </Link>
-             </Grid>
-             <Grid item>
-               <Link href="#" variant="body2">
-                 {"Don't have an account? Sign Up"}
-               </Link>
-             </Grid>
-           </Grid>
-         </Box>
-       </Box>
-     </Container>
-
-  );
-  */
 }
