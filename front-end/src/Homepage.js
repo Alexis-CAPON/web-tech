@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Navbar from './components/homepage/Navbar'
 
-import './homepage.css';
 import {useEffect} from 'react';
 import Typography from '@mui/material/Typography';
 
