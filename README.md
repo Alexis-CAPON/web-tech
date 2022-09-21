@@ -13,7 +13,7 @@ This application allow users to do : <br/>
 * Modify his settings.
 * Trust the Chat application because it is secured and the resource access is verified.
 
-**WARNING - USE SHOULD USE MOZILLA FIREFOX FOR A BETTER USE !**
+**WARNING - YOU SHOULD USE MOZILLA FIREFOX FOR A BETTER USE !**
 
 ## Usage
 
